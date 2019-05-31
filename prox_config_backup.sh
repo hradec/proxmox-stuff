@@ -11,7 +11,7 @@ set -e
 # permanent backups directory
 # default value can be overridden by setting environment variable before running prox_config_backup.sh
 # example: export BACKUP_DIR="/mnt/pve/media/backup
-_bdir=${BACKUP_DIR:-/net/192.168.0.16/mnt/HOME_FOLDERS/}
+_bdir=${BACKUP_DIR:-/smb/192.168.0.2/Backups/proxmox/dump/}
 
 # temporary storage directory
 _tdir=${TMP_DIR:-/rpool/}
@@ -60,11 +60,11 @@ function description {
         https://github.com/DerDanilo/proxmox-stuff
         -----------------------------------------------------------------
 
-        Hit return to proceed or CTRL-C to abort.
+        Hit CTRL-C to abort in 15 seconds
 
 EOF
-    read dummy
-    clear
+    #read dummy
+    sleep 15
 }
 
 function are-we-root-abort-if-not {
