@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+
+blockdev --setra 131072 /dev/sd?
+
+
+
+
+exit 0
