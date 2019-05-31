@@ -49,7 +49,7 @@ def switchBranch():
 	# make a copy of this file so we can check if it changed after updating!
 	os.system("cp %s/setup.py /dev/shm/ " % CD)
 
-	current_branch = ''.join(os.popen("cd %s ; git branch -a | grep '*' | awk '{print $(NF-1)}'" % CD).readlines()).strip()
+	current_branch = ''.join(os.popen("cd %s ; git branch -a | grep '*' | awk '{print $(NF)}'" % CD).readlines()).strip()
 	if current_branch != branch:
 		os.system( '''
 			cd %s
@@ -131,7 +131,7 @@ if len(sys.argv) == 1:
 else:
 	# use an alternative git branch, based on the vm name
 	switchBranch()
-
+	print sys.argv
 	# install
 	if "-i" in sys.argv[1]:
 		install()
