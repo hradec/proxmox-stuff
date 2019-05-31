@@ -23,7 +23,11 @@ pvecm expected 1
 #/usr/share/perl5/PVE/QemuServer.pm
 
 #/root/testStart
-#startvm 401
+
+# start windows
+# startvm 401
+
+# start flame
 startvm 700
 
 exit 0

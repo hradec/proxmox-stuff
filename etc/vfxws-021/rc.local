@@ -1,20 +1,25 @@
-#!/bin/bash
+#!/bin/sh
 
 # pull latest setup from github
 CD=$(pwd)
-cd /root/proxmox-stuff
-git reset HEAD~5 --hard
-while true ; do
-	git pull
- 	if [ $? == 0 ] ; then
-		break
-	fi
-	echo "Failed to pull from github... retrying..."
-	sleep 1
-done
-./setup.py -i
-echo $?
-cd $CD
+if [ -e /root/proxmox-stuff ] ; then
+	cd /root/proxmox-stuff
+	git reset HEAD~5 --hard
+	while true ; do
+		git pull
+	 	if [ $? == 0 ] ; then
+			break
+		fi
+		echo "Failed to pull from github... retrying..."
+		sleep 1
+	done
+	./setup.py -i
+	echo $?
+	cd $CD
+fi
 
+
+pvecm expected 1
+#/usr/share/perl5/PVE/QemuServer.pm
 
 exit 0

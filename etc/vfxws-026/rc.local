@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # pull latest setup from github
 CD=$(pwd)
@@ -21,6 +21,5 @@ fi
 
 pvecm expected 1
 #/usr/share/perl5/PVE/QemuServer.pm
-
 
 exit 0
