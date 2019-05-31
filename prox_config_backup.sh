@@ -11,10 +11,10 @@ set -e
 # permanent backups directory
 # default value can be overridden by setting environment variable before running prox_config_backup.sh
 # example: export BACKUP_DIR="/mnt/pve/media/backup
-_bdir=${BACKUP_DIR:-/mnt/backups/proxmox}
+_bdir=${BACKUP_DIR:-/net/192.168.0.16/mnt/HOME_FOLDERS/}
 
 # temporary storage directory
-_tdir=${TMP_DIR:-/var/tmp}
+_tdir=${TMP_DIR:-/rpool/}
 
 _tdir=$(mktemp -d $_tdir/proxmox-XXXXXXXX)
 
