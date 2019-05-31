@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # pull latest setup from github
 CD=$(pwd)
@@ -17,13 +17,5 @@ if [ -e /root/proxmox-stuff ] ; then
 	echo $?
 	cd $CD
 fi
-
-
-pvecm expected 1
-#/usr/share/perl5/PVE/QemuServer.pm
-
-#/root/testStart
-#startvm 401
-startvm 700
 
 exit 0
