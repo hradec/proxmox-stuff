@@ -10,8 +10,12 @@
 #	"nosuid" and "nodev" options unless the "suid" and "dev"
 #	options are explicitly given.
 #
+
+
 /net	-hosts
 /smb	/etc/auto.smb --timeout=60
+
+
 #
 # Include /etc/auto.master.d/*.autofs
 # The included files must conform to the format of this file.
