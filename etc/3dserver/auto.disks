@@ -6,3 +6,6 @@
 
 #/.LIZARDFS      -fstype=lizardfs									:lizardfs
 /.MOOSEFS       -fstype=fuse,allow_other,auto_unmount,nonempty,mfsmaster=192.168.0.11,mfsdelayedinit    :moosefs
+
+
+/gv0            -fstype=ext4,defaults,noatime,nodiratime,relatime,data=writeback  LABEL="GLUSTER"
