@@ -1,0 +1,6 @@
+
+
+
+/mnt/DAS	    -fstype=cifs,username=hradec,password=t,file_mode=0777,dir_mode=0777,noperm,actimeo=5,nocase,rsize=131007,wsize=131007				://192.168.0.7/Backups
+/.LIZARDFS      -fstype=fuse,allow_other,nonempty,mfsmaster=192.168.0.12        :lizardfs
+/.MOOSEFS       -fstype=fuse,allow_other,nonempty,mfsmaster=192.168.0.11        :moosefs      

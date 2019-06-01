@@ -13,13 +13,17 @@
 
 
 /net	-hosts
-/smb	/etc/auto.smb	--timeout=60
+/smb	/etc/auto.smb --timeout=60
 
 
 #
 # Include /etc/auto.master.d/*.autofs
 # The included files must conform to the format of this file.
 #
+
+/-	/etc/auto.disks --timeout=60
+
+
 +dir:/etc/auto.master.d
 #
 # Include central master map if it can be found using
