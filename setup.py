@@ -50,7 +50,7 @@ def switchBranch():
 	os.system("cp %s/setup.py /dev/shm/ " % CD)
 
 	current_branch = ''.join(os.popen("cd %s ; git branch -a | grep '*' | awk '{print $(NF)}'" % CD).readlines()).strip()
-	if current_branch != branch:
+	if current_branch != branch or 1:
 		os.system( '''
 			cd %s
 			git stash
@@ -90,6 +90,11 @@ def install():
 
 		if reboot:
 			os.system( "systemctl reboot" )
+		else:
+			os.system( "systemctl restart autofs")
+			os.system( "systemctl restart glusterfs-server")
+			os.system( "systemctl restart smbd")
+			os.system( "systemctl restart nfsd")
 
 def copyBack():
 	for vm in [ x for x in vm_map if x in hostname ]:
@@ -138,4 +143,4 @@ else:
 
 	# copy back
 	if "-c" in sys.argv[1]:
-		copyBack
+		copyBack()
