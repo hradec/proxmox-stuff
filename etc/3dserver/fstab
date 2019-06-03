@@ -1,0 +1,14 @@
+# <file system> <mount point> <type> <options> <dump> <pass>
+
+
+UUID="a7bae5e2-6b60-486c-ac29-ef0dd1ffa3d3"	/	ext4	defaults,rw		0 1
+proc /proc proc defaults 0 0
+
+/.swap                   none           swap            default 0 0
+
+
+lizardfs			/.LIZARDFS	lizardfs	x-systemd.requires=network-online.target,allow_other,noatime,mfsdelayedinit,nonempty
+
+
+farm2           /gcs/farm2      gcsfuse2        allow_other,nonempty    0 0
+
