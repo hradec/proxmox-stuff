@@ -1,0 +1,8 @@
+
+
+
+/mnt/DAS	    -fstype=cifs,username=hradec,password=t,file_mode=0777,dir_mode=0777,noperm,actimeo=5,nocase,rsize=131007,wsize=131007				://192.168.0.7/Backups
+/mnt/Projetos   -fstype=ntfs-3g,default						:LABEL="Projetos"
+
+/.LIZARDFS      -fstype=lizardfs									:lizardfs
+/.MOOSEFS       -fstype=fuse,allow_other,auto_unmount,nonempty,mfsmaster=192.168.0.11,mfsdelayedinit    :moosefs
