@@ -16,7 +16,6 @@ systemctl stop kdm
 systemctl stop nxserver
 rm -rf /etc/X11/xorg.conf
 mkdir -p /var/run/kdm
-systemctl start kdm
 
 #while [ $(ls -l /dev/disk/by-path/ip-192*3dserver-das*-target-lun-[0-1]-part9 | wc -l) -lt 3 ] ; do 
 #	echo waiting iscsi...
@@ -34,7 +33,7 @@ ls -l /mnt/sdb/
 chmod a+rwx /mnt/sdb
 systemctl restart stonewire
 
-touch /var/lock/subsys/local
+touch /var/lock/subsys/local || true
 
 # ------- ADDED BY DKU... DO NOT ERASE -------
 # ------- set  deadline io scheduling for every device that exists in a volume group ----------
@@ -50,5 +49,7 @@ done
 route add default gw 192.168.0.15
 route del default gw 1.1.1.1
 
+
+systemctl start kdm
 sleep 5
 systemctl start nxserver
