@@ -32,6 +32,8 @@ files_need_reboot = {
 if 'proxmox' in hostname:
 	folders['crontab'] = 'var/spool/cron/crontabs'
 
+if hostname not in vm_map:
+	vm_map[ hostname ] = hostname
 
 # function setup
 # =============================================================================
@@ -50,7 +52,7 @@ def switchBranch():
 	os.system("cp %s/setup.py /dev/shm/ " % CD)
 
 	current_branch = ''.join(os.popen("cd %s ; git branch -a | grep '*' | awk '{print $(NF)}'" % CD).readlines()).strip()
-	if current_branch != branch or 1:
+	if current_branch != branch:
 		os.system( '''
 			cd %s
 			git stash
