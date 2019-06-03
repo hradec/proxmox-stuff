@@ -7,7 +7,7 @@ if [ -e /root/proxmox-stuff ] ; then
 	git reset HEAD~5 --hard
 	while true ; do
 		git pull
-	 	if [ $? == 0 ] ; then
+	 	if [ $? -ne 0 ] ; then
 			break
 		fi
 		echo "Failed to pull from github... retrying..."
