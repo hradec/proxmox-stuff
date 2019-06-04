@@ -24,6 +24,8 @@ folders = {
 	'etc' 		: 'etc',
 	'crontab' 	: 'var/spool/cron/crontabs',
 	'root'	 	: 'root',
+	'lib'	 	: 'lib',
+	'lib64'	 	: 'lib64',
 }
 
 files_need_reboot = {
