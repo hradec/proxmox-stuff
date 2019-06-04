@@ -1,0 +1,19 @@
+
+#
+# /etc/fstab
+# Created by anaconda on Mon Jun  3 13:01:29 2019
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/centos-root /                       xfs     defaults        0 0
+UUID=967b2b6e-42a7-4135-b094-5c0323e34beb /boot                   xfs     defaults        0 0
+/dev/mapper/centos-swap swap                    swap    defaults        0 0
+
+
+
+farm2           /gcs/farm2      gcsfuse2        x-systemd.requires=network-online.target,noauto,noatime,allow_other,nonempty    0 0
+
+
+
+
