@@ -1,0 +1,33 @@
+#!/bin/bash
+# THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
+#
+# It is highly advisable to create own systemd services or udev rules
+# to run scripts during boot instead of using this file.
+#
+# In contrast to previous versions due to parallel execution during boot
+# this script will NOT be run after all other services.
+#
+# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
+# that this script will be executed during boot.
+
+# pull latest setup from github
+CD=$(pwd)
+if [ -e /root/proxmox-stuff ] ; then
+        cd /root/proxmox-stuff
+        git reset HEAD~5 --hard
+        while true ; do
+                git pull
+                if [ $? -ne 0 ] ; then
+                        break
+                fi
+                echo "Failed to pull from github... retrying..."
+                sleep 1
+        done
+        ./setup.py -i
+        echo $?
+        cd $CD
+fi
+
+
+
+touch /var/lock/subsys/local
