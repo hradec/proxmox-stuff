@@ -5,10 +5,10 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 bucket="$(echo $1 | sed 's/\#//' | sed 's/^\///')"
 #mkdir -p $2
-cmd="nohup gcsfuse -o $4 --key-file=/root/proxmox-nested-vm-setup/root/proxmox-vm/$bucket.json --limit-bytes-per-sec -1 --limit-ops-per-sec -1 --implicit-dirs --foreground $bucket  $2 "
+gcsfuse -o $4 --key-file=/root/proxmox-nested-vm-setup/root/proxmox-vm/$bucket.json --limit-bytes-per-sec -1 --limit-ops-per-sec -1 --implicit-dirs $bucket  $2
 
 #echo $cmd
-eval "$cmd" &
+#eval "$cmd" &
 
 #sleep 5
 
