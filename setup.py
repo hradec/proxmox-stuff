@@ -93,7 +93,7 @@ def install():
 				os.system( cmd )
 
 		if reboot:
-			os.system( "systemctl reboot" )
+			os.system( "echo systemctl reboot" )
 		else:
 			os.system( "systemctl restart autofs")
 			os.system( "systemctl restart glusterfs-server")
