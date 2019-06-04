@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+
+systemctl restart corosync
+pvecm expected 1
+
+
 # pull latest setup from github
 CD=$(pwd)
 if [ -e /root/proxmox-stuff ] ; then
@@ -21,7 +27,7 @@ fi
 
 blockdev --setra 131072 /dev/sd?
 
-
+systemctl restart corosync
 pvecm expected 1
 
 

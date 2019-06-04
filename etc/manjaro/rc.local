@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+systemctl restart corosync
+pvecm expected 1
+
+
+
 # pull latest setup from github
 CD=$(pwd)
 if [ -e /root/proxmox-stuff ] ; then
@@ -17,6 +23,11 @@ if [ -e /root/proxmox-stuff ] ; then
 	echo $?
 	cd $CD
 fi
+
+
+systemctl restart corosync
+pvecm expected 1
+
 
 
 
