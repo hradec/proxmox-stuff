@@ -1,0 +1,15 @@
+# <file system> <mount point> <type> <options> <dump> <pass>
+/dev/pve/root / xfs defaults 0 1
+/dev/pve/swap none swap sw 0 0
+proc /proc proc defaults 0 0
+
+
+#moosefs                                         /.MOOSEFS               fuse    allow_other,big_writes,nodev,noatime,mfsdelayedinit,nonempty,mfsmaster=192.168.0.11
+#//192.168.0.21/Backups                         /mnt/DAS/               cifs    defaults,username=3d,password=3d
+
+LABEL=NVME              /NVME           ext4    defaults,noatime,nodiratime,relatime,data=writeback     0 1
+
+#LABEL=IMAGES           /mnt/images     ext4    defaults,noatime,nodiratime,relatime,data=writeback     0 1
+#/NVME/swap             none            swap    sw      0 0
+
+farm2           /gcs/farm2      gcsfuse2        x-systemd.requires=network-online.target,noauto,noatime,allow_other,nonempty    0 0
