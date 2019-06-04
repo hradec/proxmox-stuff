@@ -11,6 +11,9 @@ UUID=967b2b6e-42a7-4135-b094-5c0323e34beb /boot                   xfs     defaul
 /dev/mapper/centos-swap swap                    swap    defaults        0 0
 
 
+lizardfs                        /.LIZARDFS      lizardfs        x-systemd.requires=network-online.target,allow_other,noatime,mfsdelayedinit,nonempty
+
+
 
 farm2           /gcs/farm2      gcsfuse2        x-systemd.requires=network-online.target,noauto,noatime,allow_other,nonempty    0 0
 
