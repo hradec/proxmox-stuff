@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+
+
+/bin/bash -c "nohup /bin/lizardfs  -o allow_other,auto_unmount,nonempty,mfsmaster=192.168.0.12	$2 &" &
+
+exit 0
