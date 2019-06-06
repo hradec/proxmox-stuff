@@ -28,6 +28,10 @@ pvecm expected 1
 # startvm 401
 
 # start flame
-startvm 700
+startFlame(){
+	sleep 180
+	startvm 700
+}
+startFlame &
 
 exit 0
