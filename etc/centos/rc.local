@@ -2,8 +2,8 @@
 
 
 
-systemctl restart corosync
-pvecm expected 1
+# systemctl restart corosync
+# pvecm expected 1
 
 
 # pull latest setup from github
@@ -27,8 +27,8 @@ fi
 
 blockdev --setra 131072 /dev/sd?
 
-systemctl restart corosync
-pvecm expected 1
+# systemctl restart corosync
+# pvecm expected 1
 
 
 
