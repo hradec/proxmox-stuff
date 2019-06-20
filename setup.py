@@ -101,6 +101,7 @@ def install():
 			os.system( "systemctl restart nfsd")
 
 def copyBack():
+	os.system( "cd %s ; git stash ; git reset HEAD~2 --hard ; git pull ; git stash pop" % CD )
 	for vm in [ x for x in vm_map if x in hostname ]:
 		for f in folders:
 			cmd = "mkdir -p %s/%s/%s/" % ( CD, f, vm_map[vm] )
