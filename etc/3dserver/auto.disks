@@ -5,7 +5,7 @@
 /mnt/Projetos   -fstype=ntfs-3g,default						:LABEL="Projetos"
 
 #/.LIZARDFS      -fstype=lizardfs									:lizardfs
-/.MOOSEFS       -fstype=fuse,allow_other,auto_unmount,nonempty,mfsmaster=192.168.0.11,mfsdelayedinit    :moosefs
+/.MOOSEFS       -fstype=fuse,allow_other,auto_unmount,nonempty,mfsmaster=192.168.0.11,mfsdelayedinit,mfspreflabels=ZS    :moosefs
 
 
 /gv0            -fstype=xfs,defaults,noatime,nodiratime,relatime	:/dev/sdd
