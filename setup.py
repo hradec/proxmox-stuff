@@ -62,6 +62,7 @@ def switchBranch():
 			git pull
 			git checkout remotes/origin/%s -b %s || git checkout %s
 			git pull
+			git stash pop
 			sync
 		''' % (CD, branch, branch, branch) )
 
