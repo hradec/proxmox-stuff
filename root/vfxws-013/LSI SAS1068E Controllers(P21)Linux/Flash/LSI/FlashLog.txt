@@ -1,0 +1,44 @@
+	Adapter Selected is a LSI SAS 1068E(B3):
+
+	Executing Operation: Flash Firmware Image
+
+		Checksum Passed: 00000000
+
+		Verifying NVDATA Compatibility. . .
+		NVDATA Versions Compatible
+
+		Product ID and Vendor ID do not match.
+		Would you like to flash anyway [y/n]? 
+		Valid BootLoader Image verified.
+
+		Flashing IT Firmware over IR Firmware!
+		Would you like to flash anyway [y/n]? 
+
+		Beginning Firmware Download
+
+		Firmware Download: SUCCESSFUL!
+
+		Verifying the image flashed correctly. . . 
+
+		Firmware Flash: SUCCESSFUL!
+
+		Resetting Adapter:
+		Adapter Successfully reset.
+
+	Executing Operation: Flash BIOS Image
+
+		Validating BIOS Image. . .
+
+		BIOS Header Signature Valid.
+
+		Checksum Passed: 00000000
+
+		BIOS Image compatible with the SAS Controller.
+
+		Attempting to Flash BIOS Image. . .
+
+		BIOS Flash: SUCCESSFUL!
+
+
+Finished Processing Commands Successfully.
+	Exiting SASFlash.
