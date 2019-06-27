@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 
 vga=$(lspci | grep VGA | grep NVIDIA | awk '{print $1}')
@@ -17,8 +17,21 @@ if [ "$1" != "" ] ; then
 
 
 	# and now we can bind to vfio
-	echo $(lspci -s 04:00.0 -n | awk '{print $(NF-2)}' | sed 's/:/ /g') >  /sys/bus/pci/drivers/vfio-pci/new_id
+	echo $(lspci -s $vga -n | awk '{print $(NF-2)}' | sed 's/:/ /g') >  /sys/bus/pci/drivers/vfio-pci/new_id
 	echo 0000:$vga >  /sys/bus/pci/drivers/vfio-pci/bind
+
+	for n in $(cat /etc/pve/qemu-server/700.conf  | egrep '^host' | grep -v romfile  | awk '{print $2}' | awk -F',' '{print $1}') ; do
+
+		for p in $(lspci -s $n | egrep "^$n" | awk '{print $1}') ; do
+
+			d=$(lspci -s 0000:$p -v | grep Kernel | awk '{print $(NF)}')
+			echo 0000:$p > /sys/bus/pci/drivers/$d/unbind
+			echo $p > /sys/bus/pci/drivers/vfio-pci/new_id
+			echo 0000:$p > /sys/bus/pci/drivers/vfio-pci/bind
+
+		done
+
+	done
 
 	eval "$(qm showcmd $1)"
 else
