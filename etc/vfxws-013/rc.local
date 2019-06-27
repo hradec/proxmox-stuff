@@ -33,8 +33,6 @@ startFlame(){
 	sleep 60
 	qm stop 700
 	startvm 700
-	startvm 700
-	startvm 700
 }
 startFlame &
 
