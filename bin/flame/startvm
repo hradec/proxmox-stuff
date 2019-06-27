@@ -1,0 +1,29 @@
+#!/bin/bash 
+
+
+vga=$(lspci | grep VGA | grep NVIDIA | awk '{print $1}')
+
+if [ "$1" != "" ] ; then
+	# bind/unbind nvidia driver to VGA to force a proper reset of the nvidia board
+	nvidia-modprobe
+	echo 0000:$vga >  /sys/bus/pci/drivers/vfio-pci/unbind
+	echo 0000:$vga >  /sys/bus/pci/drivers/nvidia/bind
+	nvidia-smi -caa
+	nvidia-smi -r
+	nvidia-smi
+	sleep 1
+	echo binding vfio
+	echo 0000:$vga >  /sys/bus/pci/drivers/nvidia/unbind
+
+
+	# and now we can bind to vfio
+	echo $(lspci -s 04:00.0 -n | awk '{print $(NF-2)}' | sed 's/:/ /g') >  /sys/bus/pci/drivers/vfio-pci/new_id
+	echo 0000:$vga >  /sys/bus/pci/drivers/vfio-pci/bind
+
+	eval "$(qm showcmd $1)"
+else
+
+	echo
+	echo "$(basename $0) <vm number>"
+	echo
+fi
