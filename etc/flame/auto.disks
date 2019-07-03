@@ -5,7 +5,7 @@
 /atomo/pipeline		-fstype=nfs,defaults,nolock,vers=3,tcp,fsc 									192.168.0.16:/.HOME_FOLDERS/.pipeline                      
 
 
-/mnt/sdb	       	-fstype=xfs,rw,relatime,nobarrier								:LABEL=STORAGE
+/mnt/sdb	       	-fstype=xfs,rw,relatime,nobarrier								:/dev/sdb
 
 /mnt/DAS	    -fstype=cifs,username=hradec,password=t,file_mode=0777,dir_mode=0777,noperm,actimeo=5,nocase,rsize=131007,wsize=131007				://192.168.0.7/Backups
 
