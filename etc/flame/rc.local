@@ -1,57 +1,37 @@
-#!/bin/bash
-# THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
-#
-# It is highly advisable to create own systemd services or udev rules
-# to run scripts during boot instead of using this file.
-#
-# In contrast to previous versions due to parallel execution during boot
-# this script will NOT be run after all other services.
-#
-# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
-# that this script will be executed during boot.
+#!/bin/sh
 
-/root/proxmox-stuff/setup.py -i
-
-systemctl stop kdm
-systemctl stop nxserver
-rm -rf /etc/X11/xorg.conf
-mkdir -p /var/run/kdm
-
-#while [ $(ls -l /dev/disk/by-path/ip-192*3dserver-das*-target-lun-[0-1]-part9 | wc -l) -lt 3 ] ; do 
-#	echo waiting iscsi...
-#	sleep 1
-#done
-
-#systemctl restart zfs-import-cache
-#systemctl restart zfs-mount
-#zfs mount
-
-#while [ "$(df -h | grep DAS_ISCSI)" == "" ] ; do sleep 1 ; done
-systemctl restart autofs
-#ls -l /DAS_ISCSI/
-ls -l /mnt/sdb/
-ls -l /mnt/.MOOSEFS
-chmod a+rwx /mnt/sdb
-systemctl restart stonewire
-
-touch /var/lock/subsys/local || true
-
-# ------- ADDED BY DKU... DO NOT ERASE -------
-# ------- set  deadline io scheduling for every device that exists in a volume group ----------
-devices=`vgdisplay --verbose 2>/dev/null | grep "PV Name" | sed -e "s+.*/++" -e "s/[0-9]*//g"`
-for device in $devices
-do
-   echo deadline > /sys/block/$device/queue/scheduler
-done
-
-# ------- END: ADDED BY DKU... DO NOT ERASE -------
+# pull latest setup from github
+CD=$(pwd)
+if [ -e /root/proxmox-stuff ] ; then
+	cd /root/proxmox-stuff
+	git reset HEAD~5 --hard
+	while true ; do
+		git pull
+	 	if [ $? == 0 ] ; then
+			break
+		fi
+		echo "Failed to pull from github... retrying..."
+		sleep 1
+	done
+	./setup.py -i
+	echo $?
+	cd $CD
+fi
 
 
-route add default gw 192.168.0.15
-route del default gw 1.1.1.1
+pvecm expected 1
+#/usr/share/perl5/PVE/QemuServer.pm
 
+#/root/testStart
 
-systemctl start kdm
-sleep 5
-systemctl start nxserver
+# start windows
+# startvm 401
 
+# start flame
+startFlame(){
+	sleep 180
+	startvm 700
+}
+startFlame &
+
+exit 0
