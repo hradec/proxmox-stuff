@@ -47,11 +47,13 @@ else
 	# log in on windows target to bring the block device online'
 	iscsiadm -m node -T iqn.1991-05.com.microsoft:win-cu4cm8kradf-3dserver-target -l
 
-	echo '
-	# the iscsi block device came online susscessfully!'
-	if [ -e /dev/disk/by-uuid/1f809b02-84a4-4e95-92fc-ec8d4230f5bd ] ; then
+        echo '
+        # the iscsi block device came online susscessfully!'
+        if [ -e /dev/disk/by-uuid/1f809b02-84a4-4e95-92fc-ec8d4230f5bd ] ; then
 		echo '
 		# so we bring glusterfs online, and hopefully it will be up!'
+		systemctl restart autofs
+		ls -l /gv0
 		timeout 60 systemctl restart glusterfs-server
 		if [ $? != 0 ] ; then
 			timeout 60 systemctl stop glusterfs-server
