@@ -89,7 +89,7 @@ def install():
 					cmd = "rm -rfv %s" % target
 					print cmd
 					os.system( cmd )
-				cmd = "cp -rfuvL  %-80s /%s/" % ( file, folders[f] )
+				cmd = "rsync -avpP   %-80s /%s/" % ( file, folders[f] )
 				print cmd
 				os.system( cmd )
 
@@ -114,7 +114,7 @@ def copyBack():
 				if os.path.islink(file):
 					print "%s file is a link, so we don't copy back..."
 				else:
-					cmd = "cp -rfuv /%-40s %s/%s/%s" % ( folders[f]+file.split(vm_map[vm])[-1], CD, f, vm_map[vm]+file.split(vm_map[vm])[-1] )
+					cmd = "rsync -avpP  /%-40s %s/%s/%s" % ( folders[f]+file.split(vm_map[vm])[-1], CD, f, vm_map[vm]+file.split(vm_map[vm])[-1] )
 					print cmd
 					os.system( cmd )
 

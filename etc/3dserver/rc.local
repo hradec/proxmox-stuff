@@ -20,7 +20,7 @@ if [ -e /root/proxmox-stuff ] ; then
 		echo "Failed to pull from github... retrying..."
 		sleep 1
 	done
-	./setup.py -i
+#	./setup.py -i
 	echo $?
 	cd $CD
 fi
