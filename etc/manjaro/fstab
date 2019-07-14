@@ -2,3 +2,8 @@
 proc /proc proc defaults 0 0
 
 farm2           /gcs/farm2      gcsfuse2        x-systemd.requires=network-online.target,noauto,noatime,allow_other,nonempty    0 0
+
+/dev/sdg5	/mnt/images	ext4		defaults	0 1
+
+
+/mnt/images/swap	none	swap	defaults 0 0	

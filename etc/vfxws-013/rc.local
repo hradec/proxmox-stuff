@@ -7,7 +7,7 @@ if [ -e /root/proxmox-stuff ] ; then
 	git reset HEAD~5 --hard
 	while true ; do
 		git pull
-	 	if [ $? -ne 0 ] ; then
+	 	if [ $? -eq 0 ] ; then
 			break
 		fi
 		echo "Failed to pull from github... retrying..."
@@ -20,17 +20,19 @@ fi
 
 
 pvecm expected 1
-#/usr/share/perl5/PVE/QemuServer.pm
 
-#/root/testStart
+# start farm
+qm start 301
 
 # start windows
 # startvm 401
 
 # start flame
 startFlame(){
-	sleep 180
 	startvm 700
+	# sleep 60
+	# qm stop 700
+	# startvm 700
 }
 startFlame &
 

@@ -1,0 +1,61 @@
+
+#
+# /etc/fstab
+# Created by anaconda on Sat Feb 23 09:20:41 2019
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+UUID=d82294e7-2b07-474d-814e-d9760b7e4b9b /                       xfs     defaults        0 0
+UUID=e534b10f-ca1a-4256-8a72-abee74dd4149 /boot                   xfs     defaults        0 0
+UUID=068B-F7D8          /boot/efi               vfat    umask=0077,shortname=winnt 0 0
+UUID=c839d74a-e66f-4885-8449-331c6ec95ce8 swap                    swap    defaults        0 0
+
+# KEEP THIS LINE FOR CDROM -- from ADSK Redhat DVD
+/dev/cdrom      /mnt/cdrom        auto    pamconsole,exec,noauto,managed 0 0
+
+/usr/discreet   /opt/Autodesk   none    bind 
+
+LABEL=STORAGE				/mnt/sdb	xfs	defaults,rw,relatime,nobarrier   0 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#/dev/vg00/lvol1   /mnt/StorageMedia   xfs   rw,noatime,inode64,nofail
+#### DKU - IMPORTANT ####
+# You need to use the option 'nofail' for device that can not be present on boot (ex: external storage).
+# Without the option 'nofail', the boot process will stop in rescue mode if the device doesn't exist
+####
+
+
+
+#/dev/sdb1 	/mnt/sdb1	ext4	defaults		0 1
+#192.168.0.12:/ZRAID/atomo/jobs		/atomo/jobs	nfs	defaults 0 0
+#192.168.0.16:/.HOME_FOLDERS/		/atomo/home	nfs	defaults 0 0
+#192.168.0.16:/.HOME_FOLDERS/.apps	/atomo/apps	nfs	defaults 0 0
+#192.168.0.16:/.HOME_FOLDERS/.pipeline	/atomo/pipeline	nfs	defaults 0 0
+#192.168.0.16:/.LIZARDFS/ 		/.LIZARDFS	nfs	defaults 0 0

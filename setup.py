@@ -54,7 +54,7 @@ def switchBranch():
 	os.system("cp %s/setup.py /dev/shm/ " % CD)
 
 	current_branch = ''.join(os.popen("cd %s ; git branch -a | grep '*' | awk '{print $(NF)}'" % CD).readlines()).strip()
-	if current_branch != branch:
+	if current_branch != branch or 1:
 		os.system( '''
 			cd %s
 			git stash
@@ -62,6 +62,7 @@ def switchBranch():
 			git pull
 			git checkout remotes/origin/%s -b %s || git checkout %s
 			git pull
+			git stash pop
 			sync
 		''' % (CD, branch, branch, branch) )
 

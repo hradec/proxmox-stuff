@@ -1,0 +1,31 @@
+SCG Engineering Release Notice
+Product: SASFlash 
+Version: 1.30.00.00
+Release Date: 24-AUG-11 
+Release Type: GCA 
+
+
+
+Phase21 GCA Release Version 1.30.00.00 - SASFLASH_PH21 (SCGCQ00215989)
+ Defects=0, Enhancements=0 (Version Change Only)
+
+
+Phase21 Beta Release Version 1.29.02.00 - SASFLASH_PH21 (SCGCQ00209659)
+Change Summary ( Defects=1) SCGCQ00199616 (CSET) - SASFlash under UEFIBSD
+
+
+Phase21 Alpha Release Version 1.29.01.00 - SASFLASH_PH21 (SCGCQ00196921)
+Change Summary ( Defects=2)
+SCGCQ00084324 (DFCT) - Ph17-SASflash-efi: Listsasadd command is not working in efi shell
+SCGCQ00187241 (CSET) - SASFlash Gen1 Phase 20 GCA detection of NVSRAM fails on 1078 running IR
+firmware under EFI Shell (perhaps others)
+
+
+
+
+
+
+
+
+
+
