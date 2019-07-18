@@ -6,6 +6,8 @@ proc /proc proc defaults 0 0
 farm2                  /gcs/farm2      gcsfuse2         x-systemd.requires=network-online.target,noauto,noatime,allow_other,nonempty    0 0
 lizardfs               /.LIZARDFS      lizardfs         x-systemd.requires=network-online.target,allow_other,noatime,mfsdelayedinit,nonempty
 LABEL=NVME             /NVME           ext4             defaults,noatime,nodiratime,relatime,data=writeback     0 1
+LABEL=WDBLACK_4TB_A    /WDBLACK_4TB_A	ext4		defaults,noatime,nodiratime,relatime,data=writeback     0 1
+LABEL=WDBLACK_4TB_B    /WDBLACK_4TB_B	ext4		defaults,noatime,nodiratime,relatime,data=writeback     0 1
 
 
 #LABEL=IMAGES            /mnt/images    ext4             defaults,noatime,nodiratime,relatime,data=writeback     0 1
