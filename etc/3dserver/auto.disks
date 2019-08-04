@@ -8,4 +8,5 @@
 /.MOOSEFS       -fstype=fuse,allow_other,auto_unmount,nonempty,mfsmaster=192.168.0.11,mfsdelayedinit,mfspreflabels=ZS    :moosefs
 
 
-/gv0            -fstype=xfs,defaults,noatime,nodiratime,relatime	:/dev/sdd
+#/gv0            -fstype=xfs,defaults,noatime,nodiratime,relatime	:/dev/sdd
+#/gv0            -fstype=xfs,defaults,noatime,nodiratime,relatime	:/DAS_NAO_USAR/ISCSI/gluster.vhd

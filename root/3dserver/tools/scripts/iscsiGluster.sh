@@ -5,6 +5,7 @@ host="$(ping -c 1 $(hostname) | grep PING | awk '{print $3}' | tr -d '()')"
 
 # windows is offline
 if [ "$(qm list | grep win2008r2 | grep running)" == "" ] ; then
+	systemctl restart autofs
 	echo '# so we have to shutdown eveything that depends on it'
 	timeout 30 systemctl stop glusterfs-server
 	if [ $? != 0 ] ; then
