@@ -1,0 +1,222 @@
+Adapter 0: JBOD: Disabled
+Adapter 1: JBOD: Disabled
+
+Exit Code: 0x00
+Fatal error - Command Tool invoked with wrong parameters
+Exit Code: 0x01
+Adapter #0
+
+Enclosure Device ID: 252
+Slot Number: 4
+Enclosure position: N/A
+Device Id: 16
+WWN: 
+Sequence Number: 1
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 1.819 TB [0xe8e088b0 Sectors]
+Non Coerced Size: 1.818 TB [0xe8d088b0 Sectors]
+Coerced Size: 1.818 TB [0xe8d00000 Sectors]
+Sector Size:  0
+Firmware state: Unconfigured(good), Spun down
+Device Firmware Level: 0001
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x666a4103a5688269
+Connected Port Number: 4(path0) 
+Inquiry Data: S2N5J50B704031      SAMSUNG HD204UI                         1AQ10001
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: Foreign 
+Foreign Secure: Drive is not secured by a foreign lock key
+Device Speed: 3.0Gb/s 
+Link Speed: 3.0Gb/s 
+Media Type: Hard Disk Device
+Drive Temperature : N/A
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Port-0 :
+Port status: Active
+Port's Linkspeed: 3.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+Enclosure Device ID: 252
+Slot Number: 5
+Drive's position: DiskGroup: 0, Span: 0, Arm: 0
+Enclosure position: N/A
+Device Id: 18
+WWN: 
+Sequence Number: 2
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 1.819 TB [0xe8e088b0 Sectors]
+Non Coerced Size: 1.818 TB [0xe8d088b0 Sectors]
+Coerced Size: 1.818 TB [0xe8d00000 Sectors]
+Sector Size:  0
+Firmware state: Online, Spun Up
+Device Firmware Level: 0001
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x6b6c4103a4687f70
+Connected Port Number: 5(path0) 
+Inquiry Data: S2N5J50B601783      SAMSUNG HD204UI                         1AQ10001
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: None 
+Device Speed: 3.0Gb/s 
+Link Speed: 3.0Gb/s 
+Media Type: Hard Disk Device
+Drive Temperature : N/A
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Port-0 :
+Port status: Active
+Port's Linkspeed: 3.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+Enclosure Device ID: 252
+Slot Number: 6
+Drive's position: DiskGroup: 2, Span: 0, Arm: 0
+Enclosure position: N/A
+Device Id: 22
+WWN: 
+Sequence Number: 2
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 1.819 TB [0xe8e088b0 Sectors]
+Non Coerced Size: 1.818 TB [0xe8d088b0 Sectors]
+Coerced Size: 1.818 TB [0xe8d00000 Sectors]
+Sector Size:  0
+Firmware state: Online, Spun Up
+Device Firmware Level: 0001
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x656c4103a4687e70
+Connected Port Number: 6(path0) 
+Inquiry Data: S2N5J50B600723      SAMSUNG HD204UI                         1AQ10001
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: None 
+Device Speed: 3.0Gb/s 
+Link Speed: 3.0Gb/s 
+Media Type: Hard Disk Device
+Drive Temperature : N/A
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Port-0 :
+Port status: Active
+Port's Linkspeed: 3.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+Enclosure Device ID: 252
+Slot Number: 7
+Drive's position: DiskGroup: 1, Span: 0, Arm: 0
+Enclosure position: N/A
+Device Id: 28
+WWN: 
+Sequence Number: 2
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 1.819 TB [0xe8e088b0 Sectors]
+Non Coerced Size: 1.818 TB [0xe8d088b0 Sectors]
+Coerced Size: 1.818 TB [0xe8d00000 Sectors]
+Sector Size:  0
+Firmware state: Online, Spun Up
+Device Firmware Level: CC26
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x3c296c38698a6251
+Connected Port Number: 7(path0) 
+Inquiry Data:             Z4Z90QYSST2000DM006-2DM164                      CC26    
+FDE Capable: Not Capable
+FDE Enable: Disable
+Secured: Unsecured
+Locked: Unlocked
+Needs EKM Attention: No
+Foreign State: None 
+Device Speed: 6.0Gb/s 
+Link Speed: 3.0Gb/s 
+Media Type: Hard Disk Device
+Drive Temperature : N/A
+PI Eligibility:  No 
+Drive is formatted for PI information:  No
+PI: No PI
+Port-0 :
+Port status: Active
+Port's Linkspeed: 3.0Gb/s 
+Drive has flagged a S.M.A.R.T alert : No
+
+
+
+Adapter #1
+
+Enclosure Device ID: 252
+Slot Number: 4
+Enclosure position: N/A
+Device Id: 6
+WWN: 5000c500b36698a9
+Sequence Number: 1
+Media Error Count: 0
+Other Error Count: 0
+Predictive Failure Count: 0
+Last Predictive Failure Event Seq Number: 0
+PD Type: SATA
+
+Raw Size: 1.819 TB [0xe8e088b0 Sectors]
+Non Coerced Size: 1.818 TB [0xe8d088b0 Sectors]
+Coerced Size: 1.818 TB [0xe8d00000 Sectors]
+Sector Size:  512
+Logical Sector Size:  512
+Physical Sector Size:  4096
+Firmware state: Unconfigured(good), Spun down
+Device Firmware Level: CC26
+Shield Counter: 0
+Successful diagnostics completion on :  N/A
+SAS Address(0): 0x4433221107000000
+Connected Port Number: 3(path0) 
+Inquiry Data:             Z4ZCCRVGST2000DM006-2DM164                      CC26    
+Adapter 0: JBOD: Disabled
+Adapter 1: JBOD: Disabled
+
+Exit Code: 0x00
+Adapter 0: JBOD: Disabled
+Adapter 1: JBOD: Disabled
+
+Exit Code: 0x00
+Adapter 1: JBOD: Disabled
+
+Exit Code: 0x00
