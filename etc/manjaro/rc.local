@@ -7,28 +7,31 @@
 
 
 # pull latest setup from github
-CD=$(pwd)
-if [ -e /root/proxmox-stuff ] ; then
-	cd /root/proxmox-stuff
-	git reset HEAD~5 --hard
-	while true ; do
-		git pull
-	 	if [ $? -ne 0 ] ; then
-			break
-		fi
-		echo "Failed to pull from github... retrying..."
-		sleep 1
-	done
-	./setup.py -i
-	echo $?
-	cd $CD
-fi
+#CD=$(pwd)
+#if [ -e /root/proxmox-stuff ] ; then
+#	cd /root/proxmox-stuff
+#	git reset HEAD~5 --hard
+#	while true ; do
+#		git pull
+#	 	if [ $? -ne 0 ] ; then
+#			break
+#		fi
+#		echo "Failed to pull from github... retrying..."
+#		sleep 1
+#	done
+#	./setup.py -i
+#	echo $?
+#	cd $CD
+#fi
 
 
 # systemctl restart corosync
 # pvecm expected 1
 
-
+# workaround for silent data corruption on smr
+for dev in /sys/block/sd?/; do
+   echo 127 >"$dev"/queue/max_sectors_kb
+done
 
 
 exit 0
