@@ -45,11 +45,7 @@ done
 pvecm expected 1
 
 # mount fuse and nfs mounts in fstab
-for n in $(egrep 'fuse|nfs' /etc/fstab | awk '{print $2}') ; do 
-	[ "$(mount | grep -v autofs | grep $n)" == "" ] && \
-		mkdir -p $n && \
-		mount $n
-done
+/root/mountAllNetworkDrives.sh
 
 # start farm
 #qm start 301
