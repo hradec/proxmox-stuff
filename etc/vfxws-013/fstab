@@ -1,0 +1,23 @@
+# <file system> <mount point> <type> <options> <dump> <pass>
+/dev/pve/root / ext4 errors=remount-ro,defaults,noatime,nodiratime,relatime	0 1
+/dev/pve/swap none swap sw 0 0
+proc /proc proc defaults 0 0
+
+
+
+mfsmount                                        /.LIZARDFS              fuse    allow_other,big_writes,nodev,mfsdelayedinit,nonempty,noauto,mfsmaster=192.168.0.12
+moosefs                                         /.MOOSEFS               fuse    allow_other,big_writes,nodev,mfsdelayedinit,nonempty,noauto,mfsmaster=192.168.0.11
+192.168.0.45:/BTRFS10TB                         /BTRFS10TB              nfs     defaults,nolock,noauto
+192.168.0.80:/volume2/tftp_1                    /boot/tftp              nfs     defaults,nolock,noauto
+192.168.0.12:/ZRAID/atomo/jobs                  /atomo/jobs             nfs     defaults,nolock,noauto
+192.168.0.80:/volume2/atomo/home                /atomo/home             nfs     defaults,nolock,noauto
+192.168.0.80:/volume2/atomo/apps                /atomo/apps             nfs     defaults,nolock,noauto
+192.168.0.80:/volume2/atomo/pipeline            /atomo/pipeline         nfs     defaults,nolock,noauto
+
+
+LABEL="seagate2tb"		/mnt/sdb	ext4	defaults,noatime,nodiratime,relatime,data=writeback,commit=60,nobarrier			0 1
+LABEL="DATA"			/DATA		btrfs	defaults,noatime,nodiratime,compress=zstd               0 1 
+
+
+ 
+

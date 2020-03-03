@@ -1,8 +1,25 @@
-#!/bin/sh
+#!/bin/bash
+
+# redirect output to /var/log/rc_local.log
+# ===========================================
+rm -rf /var/log/rc_local.log
+# # Close STDOUT file descriptor
+exec 1<&-
+# # Close STDERR FD
+exec 2<&-
+#
+# # Open STDOUT as $LOG_FILE file for read and write.
+exec 1<>/var/log/rc_local.log
+#
+# # Redirect STDERR to STDOUT
+exec 2>&1
+# ===========================================
+
 
 # pull latest setup from github
-CD=$(pwd)
-if [ -e /root/proxmox-stuff ] ; then
+github(){
+  CD=$(pwd)
+  if [ -e /root/proxmox-stuff ] ; then
 	cd /root/proxmox-stuff
 	git reset HEAD~5 --hard
 	while true ; do
@@ -16,16 +33,30 @@ if [ -e /root/proxmox-stuff ] ; then
 	./setup.py -i
 	echo $?
 	cd $CD
-fi
+  fi
+}
+#github
+
+while [ "$(mount | grep 'etc.pve')" == "" ] ; do
+	sleep 1
+done
 
 
 pvecm expected 1
 
+# mount fuse and nfs mounts in fstab
+for n in $(egrep 'fuse|nfs' /etc/fstab | awk '{print $2}') ; do 
+	[ "$(mount | grep -v autofs | grep $n)" == "" ] && \
+		mkdir -p $n && \
+		mount $n
+done
+
 # start farm
-qm start 301
+#qm start 301
 
 # start windows
-# startvm 401
+/root/startvm 103
+#/root/startvm 3001
 
 # start flame
 startFlame(){
@@ -34,6 +65,8 @@ startFlame(){
 	# qm stop 700
 	# startvm 700
 }
-startFlame &
+#startFlame &
+
+
 
 exit 0
