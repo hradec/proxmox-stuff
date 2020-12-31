@@ -80,8 +80,8 @@ function are-we-root-abort-if-not {
 }
 
 function check-num-backups {
-    if [[ $(ls ${_bdir} -l | grep ^- | wc -l) -ge $MAX_BACKUPS ]]; then
-      local oldbackup="$(ls ${_bdir} -t | tail -1)"
+    if [[ $(ls ${_bdir}/*.tar.gz -l | grep ^- | wc -l) -ge $MAX_BACKUPS ]]; then
+      local oldbackup="$(ls ${_bdir}/*.tar.gz -t | tail -1)"
       echo "${_bdir}/${oldbackup}"
       rm "${_bdir}/${oldbackup}"
     fi
